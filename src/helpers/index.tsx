@@ -41,3 +41,25 @@ export const getTextComponent = (
       );
   }
 };
+
+const size = {
+  mobile: "320px",
+  maxMobile: "767px",
+  tablet: "768px",
+  maxTablet: "1149px",
+  desktop: "1150px",
+};
+
+export const device = {
+  mobile: `(min-width: ${size.mobile})`,
+  maxMobile: `(max-width: ${size.tablet})`,
+  tablet: `(min-width: ${size.tablet})`,
+  maxTablet: `(max-width: ${size.maxTablet})`,
+  desktop: `(min-width: ${size.desktop})`,
+};
+
+export const resolutions = {
+  mobile: `${device.mobile} and ${device.maxMobile}`,
+  tablet: `${device.tablet} and ${device.maxTablet}`,
+  desktop: `${device.desktop}`,
+};
