@@ -47,3 +47,11 @@ code {
   src: local("Roboto"), url(./fonts/Roboto-Regular.woff2) format("woff2");
   font-weight: 400;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --grey-shadow: #ececec;
+}
