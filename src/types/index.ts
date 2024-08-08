@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, MouseEvent } from "react";
 
 export type TypographyVariants = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -7,4 +7,8 @@ export interface TypographyElementProps {
   className?: string;
 }
 
-export enum Icons {}
+export interface IconButtonProps {
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  className?: string;
+  children?: ReactNode;
+}
