@@ -55,3 +55,9 @@ code {
 html {
   --grey-shadow: #ececec;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
