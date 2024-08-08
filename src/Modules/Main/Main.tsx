@@ -1,1 +1,5 @@
-export const Main = () => {};
+import { Header } from "../../components/Header";
+
+export const Main = () => {
+  return <Header />;
+};

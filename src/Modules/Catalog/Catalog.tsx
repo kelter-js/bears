@@ -1,1 +1,1 @@
-export const Catalog = () => {};
+export const Catalog = () => <></>;
