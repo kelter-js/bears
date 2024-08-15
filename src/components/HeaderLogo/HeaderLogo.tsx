@@ -1,20 +1,18 @@
-import TabletWrapper from "../common/TabletWrapper";
-import MobileWrapper from "../common/MobileWrapper";
-import DesktopWrapper from "../common/DesktopWrapper";
+import AdaptiveWrapper from "../common/AdaptiveWrapper";
 import { Icon } from "../Icon";
 
 export const HeaderLogo = () => (
   <>
-    <MobileWrapper>
+    <AdaptiveWrapper renderResolutions={{ mobile: true }}>
       <Icon iconPath={`/icons/logo-mobile.svg`} />
-    </MobileWrapper>
+    </AdaptiveWrapper>
 
-    <TabletWrapper>
+    <AdaptiveWrapper renderResolutions={{ tablet: true }}>
       <Icon iconPath={`/icons/logo-tablet.svg`} />
-    </TabletWrapper>
+    </AdaptiveWrapper>
 
-    <DesktopWrapper>
+    <AdaptiveWrapper renderResolutions={{ desktop: true }}>
       <Icon iconPath={`/icons/logo-desktop.svg`} />
-    </DesktopWrapper>
+    </AdaptiveWrapper>
   </>
 );
