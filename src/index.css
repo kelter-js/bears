@@ -52,8 +52,13 @@ code {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   --grey-shadow: #ececec;
+  --black: #000;
 }
 
 ul {
