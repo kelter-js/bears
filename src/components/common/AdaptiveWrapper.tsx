@@ -5,30 +5,30 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 interface AdaptiveWrapperProps {
   children: ReactNode;
-  renderResolutions: {
-    mobile?: boolean;
-    tablet?: boolean;
-    desktop?: boolean;
-  };
+  isMobile?: boolean;
+  isTablet?: boolean;
+  isDesktop?: boolean;
 }
 
 const AdaptiveWrapper: FC<AdaptiveWrapperProps> = ({
   children,
-  renderResolutions,
+  isTablet,
+  isDesktop,
+  isMobile,
 }) => {
   const isDesktopResolution = useMediaQuery(resolutions.desktop);
   const isTabletResolution = useMediaQuery(resolutions.tablet);
   const isMobileResolution = useMediaQuery(resolutions.mobile);
 
-  if (isDesktopResolution && renderResolutions.desktop) {
+  if (isDesktopResolution && isDesktop) {
     return <>{children}</>;
   }
 
-  if (isTabletResolution && renderResolutions.tablet && !isMobileResolution) {
+  if (isTabletResolution && isTablet && !isMobileResolution) {
     return <>{children}</>;
   }
 
-  if (isMobileResolution && renderResolutions.mobile) {
+  if (isMobileResolution && isMobile) {
     return <>{children}</>;
   }
 
