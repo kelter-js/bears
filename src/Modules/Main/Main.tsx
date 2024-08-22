@@ -1,5 +1,11 @@
 import { Header } from "../../components/Header";
+import { Promo } from "../../components/Promo";
 
 export const Main = () => {
-  return <Header />;
+  return (
+    <div>
+      <Header />
+      <Promo />
+    </div>
+  );
 };
