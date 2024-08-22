@@ -3,15 +3,15 @@ import { Icon } from "../Icon";
 
 export const HeaderLogo = () => (
   <>
-    <AdaptiveWrapper renderResolutions={{ mobile: true }}>
+    <AdaptiveWrapper isMobile>
       <Icon iconPath={`/icons/logo-mobile.svg`} />
     </AdaptiveWrapper>
 
-    <AdaptiveWrapper renderResolutions={{ tablet: true }}>
+    <AdaptiveWrapper isTablet>
       <Icon iconPath={`/icons/logo-tablet.svg`} />
     </AdaptiveWrapper>
 
-    <AdaptiveWrapper renderResolutions={{ desktop: true }}>
+    <AdaptiveWrapper isDesktop>
       <Icon iconPath={`/icons/logo-desktop.svg`} />
     </AdaptiveWrapper>
   </>
