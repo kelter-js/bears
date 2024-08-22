@@ -21,12 +21,13 @@ export const Menu = styled("div").withConfig({
   &::before,
   &::after {
     content: "";
-    left: 0;
+    left: ${(props) => (props.isOpen ? "-3px" : 0)};
     position: absolute;
     display: block;
-    width: 100%;
     height: 2px;
-    background: #000;
+    width: ${(props) => (props.isOpen ? "26px" : "100%")};
+    background: var(--black);
+    pointer-events: none;
   }
 
   &::before {

@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useApp } from "../../Context/AppContext";
 import { PAGES } from "../../constants/enums";
 import { IconButton } from "../IconButton";
 import { Icon } from "../Icon";
@@ -9,12 +9,10 @@ import Typography from "../common/Typography";
 import * as S from "./Menu.styled";
 
 export const Menu = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => setMenuOpen((state) => !state);
+  const { isMenuOpen, toggleMenu } = useApp();
 
   return (
-    <AdaptiveWrapper renderResolutions={{ mobile: true }}>
+    <AdaptiveWrapper isMobile>
       <S.Menu isOpen={isMenuOpen}>
         <IconButton className="toggle-button" onClick={toggleMenu} />
       </S.Menu>
