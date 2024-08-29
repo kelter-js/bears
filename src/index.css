@@ -59,7 +59,10 @@ a {
 html {
   --grey-shadow: #ececec;
   --black: #000;
+  --white: #fff;
   --dark-white: #fbfbfb;
+  --promo: #63d1bb;
+  --promo-secondary: #56c3b2;
 }
 
 ul {
