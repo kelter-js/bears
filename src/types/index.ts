@@ -12,3 +12,15 @@ export interface IconButtonProps {
   className?: string;
   children?: ReactNode;
 }
+
+export interface PromoData {
+  description: string;
+  pathIcon: string;
+  className: string;
+  id: number;
+}
+
+export interface PromoItemProps {
+  description: string;
+  icon: JSX.Element;
+}
