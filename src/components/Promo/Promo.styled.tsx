@@ -26,3 +26,25 @@ export const PromoContainer = styled.div`
     color: var(--black);
   }
 `;
+
+export const PromoItemsContainer = styled.div`
+  width: 100%;
+
+  & .promo-interier {
+    height: 62;
+    width: 40;
+  }
+
+  & .promo-toy {
+    height: 60px;
+    width: 60px;
+  }
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: cetner;
+  height: 60px;
+  width: 60px;
+`;
