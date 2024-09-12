@@ -61,14 +61,20 @@ html {
   --black: #000;
   --white: #fff;
   --dark-white: #fbfbfb;
+  --dark-grey: #444;
   --promo: #63d1bb;
   --promo-secondary: #56c3b2;
+  --font-family: "Open Sans", sans-serif;
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+button {
+  background: transparent;
 }
 
 h1,
