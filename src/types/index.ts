@@ -13,14 +13,26 @@ export interface IconButtonProps {
   children?: ReactNode;
 }
 
-export interface PromoData {
-  description: string;
+interface ItemData {
   pathIcon: string;
   className: string;
   id: number;
 }
 
+export interface PromoData extends ItemData {
+  description: string;
+}
+
+export interface FeatureData extends ItemData {
+  title: string;
+}
+
 export interface PromoItemProps {
   description: string;
+  icon: JSX.Element;
+}
+
+export interface FeatureItemProps {
+  title: string;
   icon: JSX.Element;
 }
