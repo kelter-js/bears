@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { device } from "../../helpers";
-
 export const PromoImage = styled.img`
   object-position: 0 -17px;
   margin: 0 auto;
