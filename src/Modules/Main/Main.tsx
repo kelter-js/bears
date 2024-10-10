@@ -5,6 +5,7 @@ import { Features } from "../../components/Features";
 import { Feedback } from "../../components/Feedback";
 import { Contacts } from "../../components/Contacts";
 import { Location } from "../../components/Location";
+import { Footer } from "../../components/Footer";
 
 export const Main = () => (
   <div>
@@ -15,5 +16,6 @@ export const Main = () => (
     <Feedback />
     <Contacts />
     <Location />
+    <Footer />
   </div>
 );
