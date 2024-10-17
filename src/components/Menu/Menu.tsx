@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { useApp } from "../../Context/AppContext";
 import { PAGES } from "../../constants/enums";
@@ -10,6 +10,23 @@ import * as S from "./Menu.styled";
 
 export const Menu = () => {
   const { isMenuOpen, toggleMenu } = useApp();
+  const location = useLocation();
+
+  const getMainLinkData = () => {
+    if (location.pathname === PAGES.CATALOG) {
+      return {
+        mainTitle: "Главная",
+        mainLink: PAGES.HOME,
+      };
+    }
+
+    return {
+      mainTitle: "Каталог товаров",
+      mainLink: PAGES.CATALOG,
+    };
+  };
+
+  const { mainTitle, mainLink } = getMainLinkData();
 
   return (
     <AdaptiveWrapper isMobile>
@@ -21,15 +38,13 @@ export const Menu = () => {
         <S.NavContainer>
           <ul>
             <S.MenuItem>
-              <Link to={PAGES.CATALOG}>
-                <Typography className="catalog-item">
-                  Каталог товаров
-                </Typography>
+              <Link to={mainLink} onClick={toggleMenu}>
+                <Typography className="catalog-item">{mainTitle}</Typography>
               </Link>
             </S.MenuItem>
 
             <S.MenuItem>
-              <Link to={PAGES.FORM}>
+              <Link to={PAGES.FORM} onClick={toggleMenu}>
                 <Typography className="catalog-item">
                   Вязание на заказ
                 </Typography>
