@@ -13,8 +13,8 @@ const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path={PAGES.HOME} element={<Main />} />
-        <Route path={PAGES.CATALOG} element={<Form />} />
-        <Route path={PAGES.FORM} element={<Catalog />} />
+        <Route path={PAGES.FORM} element={<Form />} />
+        <Route path={PAGES.CATALOG} element={<Catalog />} />
       </Routes>
     </BrowserRouter>
   </AppContextProvider>
