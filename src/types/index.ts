@@ -27,6 +27,14 @@ export interface FeatureData extends ItemData {
   title: string;
 }
 
+export interface CatalogItemData {
+  imagePath: string;
+  title: string;
+  description: string;
+  price: string;
+  id: number;
+}
+
 export interface PromoItemProps {
   description: string;
   icon: JSX.Element;
