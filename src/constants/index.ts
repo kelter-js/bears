@@ -1,4 +1,4 @@
-import { FeatureData, PromoData } from "../types";
+import { FeatureData, PromoData, CatalogItemData } from "../types";
 
 export const PROMO_ITEMS: PromoData[] = [
   {
@@ -51,5 +51,29 @@ export const FEATURE_ITEMS: FeatureData[] = [
     pathIcon: "/icons/gift.svg",
     className: "feature-gift",
     id: 5,
+  },
+];
+
+export const CATALOG_ITEMS: CatalogItemData[] = [
+  {
+    imagePath: "/image/product-1-mobile.jpg",
+    title: "Зайчик-попрыгайчик",
+    description: "Рост 30 см, вес 200 г",
+    price: "1200 руб.",
+    id: 0,
+  },
+  {
+    imagePath: "/image/product-2-mobile.jpg",
+    title: "Корзинка для белья",
+    description: "Диаметр 15 см, высота 10 см",
+    price: "690 руб.",
+    id: 1,
+  },
+  {
+    imagePath: "/image/product-3-mobile.jpg",
+    title: "Большая корзинка для игрушек",
+    description: "Диаметр 30 см, высота 30 см",
+    price: "1500 руб.",
+    id: 2,
   },
 ];
