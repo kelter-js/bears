@@ -1,7 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+import { useGetLinksList } from "./useGetLinksList";
 import { useApp } from "../../Context/AppContext";
-import { PAGES } from "../../constants/enums";
 import { IconButton } from "../IconButton";
 import { Icon } from "../Icon";
 import AdaptiveWrapper from "../common/AdaptiveWrapper";
@@ -10,23 +10,8 @@ import * as S from "./Menu.styled";
 
 export const Menu = () => {
   const { isMenuOpen, toggleMenu } = useApp();
-  const location = useLocation();
 
-  const getMainLinkData = () => {
-    if (location.pathname === PAGES.CATALOG) {
-      return {
-        mainTitle: "Главная",
-        mainLink: PAGES.HOME,
-      };
-    }
-
-    return {
-      mainTitle: "Каталог товаров",
-      mainLink: PAGES.CATALOG,
-    };
-  };
-
-  const { mainTitle, mainLink } = getMainLinkData();
+  const links = useGetLinksList();
 
   return (
     <AdaptiveWrapper isMobile>
@@ -37,19 +22,13 @@ export const Menu = () => {
       {isMenuOpen && (
         <S.NavContainer>
           <ul>
-            <S.MenuItem>
-              <Link to={mainLink} onClick={toggleMenu}>
-                <Typography className="catalog-item">{mainTitle}</Typography>
-              </Link>
-            </S.MenuItem>
-
-            <S.MenuItem>
-              <Link to={PAGES.FORM} onClick={toggleMenu}>
-                <Typography className="catalog-item">
-                  Вязание на заказ
-                </Typography>
-              </Link>
-            </S.MenuItem>
+            {links.map((link) => (
+              <S.MenuItem key={link.href}>
+                <Link to={link.href} onClick={toggleMenu}>
+                  <Typography className="catalog-item">{link.title}</Typography>
+                </Link>
+              </S.MenuItem>
+            ))}
 
             <S.MenuItem>
               <Icon className="search-icon" iconPath={`/icons/search.svg`} />
