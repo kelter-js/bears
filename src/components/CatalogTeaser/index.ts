@@ -1,1 +1,0 @@
-export { CatalogTeaser } from "./CatalogTeaser";
