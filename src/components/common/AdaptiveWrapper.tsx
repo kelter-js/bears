@@ -1,14 +1,8 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
 import { resolutions } from "../../helpers";
+import { AdaptiveWrapperProps } from "./types";
 import useMediaQuery from "../../hooks/useMediaQuery";
-
-interface AdaptiveWrapperProps {
-  children: ReactNode;
-  isMobile?: boolean;
-  isTablet?: boolean;
-  isDesktop?: boolean;
-}
 
 const AdaptiveWrapper: FC<AdaptiveWrapperProps> = ({
   children,
