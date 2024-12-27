@@ -7,15 +7,17 @@ import { Contacts } from "../../components/Contacts";
 import { Location } from "../../components/Location";
 import { Footer } from "../../components/Footer";
 
-export const Main = () => (
-  <div>
-    <Header />
-    <Promo />
-    <MainItemCard />
-    <Features />
-    <Feedback />
-    <Contacts />
-    <Location />
-    <Footer />
-  </div>
-);
+export const Main = () => {
+  return (
+    <div>
+      <Header />
+      <Promo />
+      <MainItemCard />
+      <Features />
+      <Feedback />
+      <Contacts />
+      <Location />
+      <Footer />
+    </div>
+  );
+};
