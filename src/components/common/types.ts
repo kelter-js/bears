@@ -16,6 +16,7 @@ export interface TypographyProps {
 
 export interface FieldsetHeaderProps {
   title: string;
+  customPosition?: number;
 }
 
 export interface RadioButtonProps {
@@ -42,4 +43,10 @@ export interface TextAreaProps {
   name: string;
   placeholder: string;
   required?: boolean;
+}
+
+export interface ButtonProps {
+  children: ReactNode;
+  className?: string;
+  type?: "button" | "submit" | "reset";
 }
