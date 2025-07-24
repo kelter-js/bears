@@ -1,3 +1,7 @@
+import { useGetResolution } from "../../hooks/useGetResolutions";
+import { Typography } from "../common/Typography";
+import { Icon } from "../Icon";
+
 import {
   Container,
   Content,
@@ -6,33 +10,48 @@ import {
   Description,
   OrderButton,
 } from "./AboutProcess.styled";
-import Typography from "../common/Typography";
-import { Icon } from "../Icon";
 
-export const AboutProcess = () => (
-  <Container>
-    <Content>
-      <Title>
-        <Icon iconName={`/icons/video.svg`} />
-        <Typography className="process-title">Процесс производства</Typography>
-      </Title>
+export const AboutProcess = () => {
+  const { desktop, tablet, mobile } = useGetResolution();
 
-      <Media>
-        <img
-          alt="Видео о процессе изготовления"
-          src={`/image/video-mobile.jpg`}
-        />
-        <Icon iconName={`/icons/play.svg`} className="play-icon" />
-      </Media>
+  const imageSrc = () => {
+    if (mobile) {
+      return "/image/video-mobile.jpg";
+    }
 
-      <Description>
-        <Typography className="process-description">
-          По просьбам наших любимых фолловеров мы сняли для вас подробное видео
-          о том, как появляются наши товары.
-        </Typography>
-      </Description>
+    if (tablet) {
+      return "/image/video-tablet.jpg";
+    }
 
-      <OrderButton>Сделать заказ</OrderButton>
-    </Content>
-  </Container>
-);
+    if (desktop) {
+      return "/image/video-desktop.jpg";
+    }
+  };
+
+  return (
+    <Container>
+      <Content>
+        <Title>
+          <Icon iconName="/icons/video.svg" className="cam" />
+          <Typography className="process-title">
+            Процесс производства
+          </Typography>
+        </Title>
+
+        <Media>
+          <img alt="Видео о процессе изготовления" src={imageSrc()} />
+          <Icon iconName="/icons/play.svg" className="play-icon" />
+        </Media>
+
+        <Description>
+          <Typography className="process-description">
+            По просьбам наших любимых фолловеров мы сняли для вас подробное
+            видео о том, как появляются наши товары.
+          </Typography>
+        </Description>
+
+        <OrderButton>Сделать заказ</OrderButton>
+      </Content>
+    </Container>
+  );
+};

@@ -1,8 +1,10 @@
-import { Teaser } from "../../components/Teaser";
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { Productions } from "../../components/Productions";
-import { AboutProcess } from "../../components/AboutProcess";
+import {
+  Header,
+  Teaser,
+  Footer,
+  Productions,
+  AboutProcess,
+} from "../../components";
 
 export const Catalog = () => (
   <div>

@@ -1,7 +1,4 @@
-import { Teaser } from "../../components/Teaser";
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { FormOrder } from "../../components/FormOrder";
+import { Header, Teaser, Footer, FormOrder } from "../../components";
 
 export const Form = () => (
   <div>

@@ -1,7 +1,8 @@
 import { FC } from "react";
+import { useFormContext, Controller } from "react-hook-form";
+
 import { CheckboxProps } from "./types";
 import { CheckboxLabel, RadioContainer } from "./index.styled";
-import { useFormContext, Controller } from "react-hook-form";
 
 export const Checkbox: FC<CheckboxProps> = ({ name, title }) => {
   const { control } = useFormContext();

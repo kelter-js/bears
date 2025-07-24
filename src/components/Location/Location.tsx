@@ -1,16 +1,25 @@
 import { useState } from "react";
 import { MapContainer, Container, SendMessageButton } from "./Location.styled";
 import { Icon } from "../Icon";
+import { useGetResolution } from "../../hooks/useGetResolutions";
 
 export const Location = () => {
   const [isLoading, setLoading] = useState(true);
   const handleFrameLoading = () => setLoading((state) => !state);
 
+  const { mobile, tablet, desktop } = useGetResolution();
+
+  const getMapImage = () => {
+    if (mobile) return `/image/map-mobile.png`;
+    if (tablet) return `/image/map-tablet.png`;
+    if (desktop) return `/image/map-desktop.png`;
+  };
+
   return (
     <Container>
       {isLoading && (
         <MapContainer>
-          <img alt="Местоположение офиса" src={`/image/map-mobile.png`} />
+          <img alt="Местоположение офиса" src={getMapImage()} />
           <Icon className="map-pin" iconPath={`/icons/map-pin.svg`} />
         </MapContainer>
       )}

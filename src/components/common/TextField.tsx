@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useFormContext, Controller } from "react-hook-form";
 
 import { TextFieldProps } from "./types";
-import { TextFieldLabel, TextFieldContainer } from "./index.styled";
+import * as S from "./index.styled";
 
 export const TextField: FC<TextFieldProps> = ({
   name,
@@ -15,13 +15,13 @@ export const TextField: FC<TextFieldProps> = ({
   const { control } = useFormContext();
 
   return (
-    <TextFieldContainer>
+    <S.TextFieldContainer>
       <Controller
         control={control}
         name={name}
         render={({ field: { value: fieldValue, ...field } }) => (
-          <TextFieldLabel hasIcon={Boolean(icon)}>
-            {title && title}
+          <S.TextFieldLabel hasIcon={Boolean(icon)}>
+            {title && <S.TextFieldTitle>{title}</S.TextFieldTitle>}
             <input
               type={type}
               {...field}
@@ -29,9 +29,9 @@ export const TextField: FC<TextFieldProps> = ({
               required={required}
             />
             {icon && icon}
-          </TextFieldLabel>
+          </S.TextFieldLabel>
         )}
       />
-    </TextFieldContainer>
+    </S.TextFieldContainer>
   );
 };

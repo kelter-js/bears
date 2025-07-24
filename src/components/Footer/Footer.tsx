@@ -1,20 +1,31 @@
-import Typography from "../common/Typography";
-import { Icon } from "../Icon";
+import { HTMLAcademyIcon } from "../common/HTMLAcademyIcon";
+import { InstagramIcon } from "../common/InstagramIcon";
+import { AdaptiveWrapper } from "../common/AdaptiveWrapper";
+import { FacebookIcon } from "../common/FacebookIcon";
+import { FooterLogo } from "../common/FooterLogo";
+import { TwitterIcon } from "../common/TwitterIcon";
+import { Typography } from "../common/Typography";
 import * as S from "./Footer.styled";
 
 export const Footer = () => (
   <S.Container>
+    <AdaptiveWrapper isTablet isDesktop>
+      <FooterLogo className="logo" />
+    </AdaptiveWrapper>
+
     <S.IconsContainer>
-      <Icon iconPath={`/icons/insta.svg`} className="insta" />
-      <Icon iconPath={`/icons/fb.svg`} className="fb" />
-      <Icon iconPath={`/icons/twitter.svg`} className="twitter" />
+      <InstagramIcon className="insta" />
+      <FacebookIcon className="fb" />
+      <TwitterIcon className="twitter" />
     </S.IconsContainer>
 
-    <S.Divider />
+    <AdaptiveWrapper isMobile>
+      <S.Divider />
+    </AdaptiveWrapper>
 
     <S.ContactsContainer>
       <Typography className="develop-by-title">Разработано</Typography>
-      <Icon iconPath={`/icons/htmlacademy.svg`} className="html" />
+      <HTMLAcademyIcon className="html" />
     </S.ContactsContainer>
   </S.Container>
 );

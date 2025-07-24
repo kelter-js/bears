@@ -1,7 +1,8 @@
 import { FC } from "react";
+import { useFormContext, Controller } from "react-hook-form";
+
 import { RadioButtonProps } from "./types";
 import { RadioLabel, RadioContainer } from "./index.styled";
-import { useFormContext, Controller } from "react-hook-form";
 
 export const RadioButton: FC<RadioButtonProps> = ({ name, title, value }) => {
   const { control } = useFormContext();

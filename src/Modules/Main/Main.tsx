@@ -1,11 +1,16 @@
-import { MainItemCard } from "../../components/MainItemCard";
-import { Header } from "../../components/Header";
-import { Promo } from "../../components/Promo";
-import { Features } from "../../components/Features";
-import { Feedback } from "../../components/Feedback";
-import { Contacts } from "../../components/Contacts";
-import { Location } from "../../components/Location";
-import { Footer } from "../../components/Footer";
+import {
+  MainItemCard,
+  Header,
+  Promo,
+  Feedback,
+  Contacts,
+  Location,
+  Footer,
+  Features,
+} from "../../components";
+
+import { AdaptiveWrapper } from "../../components/common/AdaptiveWrapper";
+import { ContactsContainer } from "./Main.styled";
 
 export const Main = () => {
   return (
@@ -15,8 +20,18 @@ export const Main = () => {
       <MainItemCard />
       <Features />
       <Feedback />
-      <Contacts />
-      <Location />
+
+      <AdaptiveWrapper isMobile isTablet>
+        <Contacts />
+        <Location />
+      </AdaptiveWrapper>
+
+      <AdaptiveWrapper isDesktop>
+        <ContactsContainer>
+          <Contacts />
+          <Location />
+        </ContactsContainer>
+      </AdaptiveWrapper>
       <Footer />
     </div>
   );

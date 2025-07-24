@@ -1,32 +1,27 @@
 import { FC } from "react";
 
-import { resolutions } from "../../helpers";
 import { AdaptiveWrapperProps } from "./types";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import { useGetResolution } from "../../hooks/useGetResolutions";
 
-const AdaptiveWrapper: FC<AdaptiveWrapperProps> = ({
+export const AdaptiveWrapper: FC<AdaptiveWrapperProps> = ({
   children,
   isTablet,
   isDesktop,
   isMobile,
 }) => {
-  const isDesktopResolution = useMediaQuery(resolutions.desktop);
-  const isTabletResolution = useMediaQuery(resolutions.tablet);
-  const isMobileResolution = useMediaQuery(resolutions.mobile);
+  const { desktop, tablet, mobile } = useGetResolution();
 
-  if (isDesktopResolution && isDesktop) {
+  if (desktop && isDesktop) {
     return <>{children}</>;
   }
 
-  if (isTabletResolution && isTablet && !isMobileResolution) {
+  if (tablet && isTablet && !mobile) {
     return <>{children}</>;
   }
 
-  if (isMobileResolution && isMobile) {
+  if (mobile && isMobile) {
     return <>{children}</>;
   }
 
   return null;
 };
-
-export default AdaptiveWrapper;

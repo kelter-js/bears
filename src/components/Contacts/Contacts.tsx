@@ -1,4 +1,6 @@
-import Typography from "../common/Typography";
+import { AdaptiveWrapper } from "../common/AdaptiveWrapper";
+import { Typography } from "../common/Typography";
+import { Icon } from "../Icon";
 
 import * as S from "./Contacts.styled";
 
@@ -7,6 +9,9 @@ export const Contacts = () => (
     <Typography variant="h3" className="contacts-header">
       Контакты
     </Typography>
+    <AdaptiveWrapper isTablet isDesktop>
+      <Icon iconName="/icons/flag.svg" className="flag" />
+    </AdaptiveWrapper>
 
     <S.ContactsContent>
       <S.ContactMetaContainer>

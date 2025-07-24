@@ -1,9 +1,14 @@
-import Typography from "../common/Typography";
+import { AdaptiveWrapper } from "../common/AdaptiveWrapper";
+import { Typography } from "../common/Typography";
 import { Icon } from "../Icon";
 import * as S from "./Feedback.styled";
 
 export const Feedback = () => (
   <S.Container>
+    <AdaptiveWrapper isTablet isDesktop>
+      <img src="/image/review.jpg" className="feedback-image" alt="feedback" />
+    </AdaptiveWrapper>
+
     <Typography variant="h2" className="feedback-title">
       Отзывы
     </Typography>
@@ -33,9 +38,19 @@ export const Feedback = () => (
     </S.ControlContainer>
 
     <S.SendFeedbackButton>Написать</S.SendFeedbackButton>
-    <Icon
-      className="feedback-pattern"
-      iconPath={`/icons/page-pattern-mobile.svg`}
-    />
+
+    <AdaptiveWrapper isMobile>
+      <Icon
+        className="feedback-pattern"
+        iconPath={`/icons/page-pattern-mobile.svg`}
+      />
+    </AdaptiveWrapper>
+
+    <AdaptiveWrapper isTablet isDesktop>
+      <Icon
+        className="feedback-pattern"
+        iconPath={`/icons/page-pattern-tablet.svg`}
+      />
+    </AdaptiveWrapper>
   </S.Container>
 );

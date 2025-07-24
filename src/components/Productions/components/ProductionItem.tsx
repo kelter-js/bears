@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 import { CatalogItemData } from "../../../types";
-import Typography from "../../common/Typography";
-import { Icon } from "../../Icon";
+import { Typography } from "../../common/Typography";
+import { CartIcon } from "../../common/CartIcon";
 import * as S from "./ProductionItem.styled";
 
 export const ProductionItem: FC<Omit<CatalogItemData, "id">> = ({
@@ -14,21 +14,23 @@ export const ProductionItem: FC<Omit<CatalogItemData, "id">> = ({
   <S.Container>
     <img alt={`description for ${title}`} src={imagePath} />
 
-    <S.ContentContainer>
+    <S.ContentContainer className="content-container">
       <S.TitleContainer>
         <Typography className="title">{title}</Typography>
         <Typography className="description">{description}</Typography>
       </S.TitleContainer>
 
-      <S.Divider />
+      <S.BuyContainer>
+        <S.Divider />
 
-      <S.PriceContainer>
-        <Typography className="price">{price}</Typography>
+        <S.PriceContainer>
+          <Typography className="price">{price}</Typography>
 
-        <button className="buy-button" onClick={() => {}}>
-          <Icon iconPath={`/icons/cart.svg`} className="buy-icon" />
-        </button>
-      </S.PriceContainer>
+          <button className="buy-button" onClick={() => {}}>
+            <CartIcon className="buy-icon" />
+          </button>
+        </S.PriceContainer>
+      </S.BuyContainer>
     </S.ContentContainer>
   </S.Container>
 );

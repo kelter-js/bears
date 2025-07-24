@@ -1,9 +1,10 @@
 import { useMemo } from "react";
+
+import { AdaptiveWrapper } from "../common/AdaptiveWrapper";
+import { Typography } from "../common/Typography";
 import { PROMO_ITEMS } from "../../constants";
-import AdaptiveWrapper from "../common/AdaptiveWrapper";
-import Typography from "../common/Typography";
-import PromoItem from "./components/PromoItem";
 import { Icon } from "../Icon";
+import PromoItem from "./components/PromoItem";
 import * as S from "./Promo.styled";
 
 export const Promo = () => {
@@ -24,22 +25,41 @@ export const Promo = () => {
   );
 
   return (
-    <section>
+    <S.Container>
       <S.PromoContainer>
         <Typography className="promo-text" variant="h1">
-          Милые штуки <br /> ручной <br /> работы для дома
+          Милые штуки{" "}
+          <AdaptiveWrapper isMobile>
+            <br />
+          </AdaptiveWrapper>
+          ручной{" "}
+          <AdaptiveWrapper isTablet isDesktop>
+            <br />
+          </AdaptiveWrapper>
+          <AdaptiveWrapper isMobile>
+            <br />
+          </AdaptiveWrapper>
+          работы для дома
         </Typography>
 
         <AdaptiveWrapper isMobile>
           <S.PromoImage alt="promo title" src="/image/hero-mobile.jpg" />
         </AdaptiveWrapper>
 
-        <AdaptiveWrapper isTablet isDesktop>
+        <AdaptiveWrapper isTablet>
+          <S.PromoImage alt="promo title" src="/image/hero-tablet.jpg" />
+        </AdaptiveWrapper>
+
+        <AdaptiveWrapper isDesktop>
           <S.PromoImage alt="promo title" src="/image/hero-desktop.jpg" />
         </AdaptiveWrapper>
       </S.PromoContainer>
 
       <S.PromoItemsContainer>{promoItems}</S.PromoItemsContainer>
-    </section>
+
+      <AdaptiveWrapper isTablet isDesktop>
+        <S.Pattern alt="pattern" src="/icons/page-pattern-filled-tablet.svg" />
+      </AdaptiveWrapper>
+    </S.Container>
   );
 };

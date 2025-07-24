@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface IconProps {
+export interface IconProps {
   iconPath?: string;
   iconName?: string;
   className?: string;
