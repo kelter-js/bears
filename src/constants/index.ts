@@ -54,6 +54,45 @@ export const FEATURE_ITEMS: FeatureData[] = [
   },
 ];
 
+export const FEATURE_ITEMS_DESKTOP: FeatureData[] = [
+  {
+    title: "Экологически чистые материалы",
+    pathIcon: "/icons/flower.svg",
+    className: "feature-flower",
+    id: 0,
+  },
+  {
+    title: "Связано вручную с  любовью и умилением",
+    pathIcon: "/icons/chain.svg",
+    className: "feature-ball",
+    id: 3,
+  },
+  {
+    title: "Скандинавский стиль  по российской цене",
+    pathIcon: "/icons/money.svg",
+    className: "feature-money",
+    id: 1,
+  },
+  {
+    title: "Поддержка\u00A0отечественного производителя",
+    pathIcon: "/icons/rocket.svg",
+    className: "feature-rocket",
+    id: 4,
+  },
+  {
+    title: "Увеличивает лайки на фотографиях",
+    pathIcon: "/icons/heart.svg",
+    className: "feature-photo",
+    id: 2,
+  },
+  {
+    title: "Поставляется в  подарочной упаковке",
+    pathIcon: "/icons/gift.svg",
+    className: "feature-gift",
+    id: 5,
+  },
+];
+
 export const CATALOG_ITEMS: CatalogItemData[] = [
   {
     imagePath: "/image/product-1-mobile.jpg",
