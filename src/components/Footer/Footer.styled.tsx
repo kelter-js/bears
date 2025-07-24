@@ -1,10 +1,42 @@
 import styled from "styled-components";
+import { device } from "../../helpers";
 
 export const Container = styled("section")`
   display: flex;
   flex-direction: column;
   padding: 25px 30px 23px 30px;
   background-color: var(--darkest-grey);
+
+  & svg:hover {
+    color: var(--teal);
+  }
+
+  & svg:active {
+    color: var(--teal);
+    opacity: 0.3;
+  }
+
+  @media ${device.tablet} and ${device.maxTablet} {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 51px 50px 58px 50px;
+
+    & .logo {
+      height: 34px;
+      width: 84px;
+    }
+  }
+
+  @media ${device.desktop} {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 51px 50px 58px 50px;
+
+    & .logo {
+      height: 34px;
+      width: 84px;
+    }
+  }
 `;
 
 export const Divider = styled("div")`
@@ -41,6 +73,14 @@ export const IconsContainer = styled("div")`
   & img {
     cursor: pointer;
   }
+
+  @media ${device.tablet} and ${device.maxTablet} {
+    margin: 0;
+  }
+
+  @media ${device.desktop} {
+    margin: 0;
+  }
 `;
 
 export const ContactsContainer = styled("div")`
@@ -49,6 +89,15 @@ export const ContactsContainer = styled("div")`
   align-items: center;
   width: 182px;
   margin: 0 auto;
+
+  &:hover svg {
+    color: var(--teal);
+  }
+
+  &:active svg {
+    color: var(--teal);
+    opacity: 0.3;
+  }
 
   & .html {
     width: 27px;
@@ -63,5 +112,15 @@ export const ContactsContainer = styled("div")`
 
     line-height: 18px;
     color: var(--black);
+  }
+
+  @media ${device.tablet} and ${device.maxTablet} {
+    width: 178px;
+    margin: 0;
+  }
+
+  @media ${device.desktop} {
+    width: 178px;
+    margin: 0;
   }
 `;

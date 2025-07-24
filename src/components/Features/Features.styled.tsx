@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../helpers";
 
 export const Container = styled("section")`
   margin-top: 31px;
@@ -12,6 +13,45 @@ export const Container = styled("section")`
 
     line-height: 30px;
     color: var(--black);
+  }
+
+  @media ${device.tablet} and ${device.maxTablet} {
+    margin-top: 55.5px;
+    padding: 0 50px;
+
+    & ul {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 100px;
+      row-gap: 57px;
+    }
+
+    & .features-header {
+      margin-bottom: 41.5px;
+
+      font-size: 43px;
+      line-height: 50px;
+    }
+  }
+
+  @media ${device.desktop} {
+    margin-top: 68px;
+    padding: 0 49px;
+
+    & .features-header {
+      margin-bottom: 39px;
+      margin-left: 176px;
+      font-size: 53px;
+      line-height: 57px;
+    }
+
+    & ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 176px;
+      column-gap: 115px;
+      row-gap: 57px;
+    }
   }
 `;
 
@@ -62,5 +102,26 @@ export const Feature = styled("div")`
   & .feature-gift {
     height: 32px;
     width: 33px;
+  }
+
+  @media ${device.tablet} and ${device.maxTablet} {
+    justify-content: space-between;
+    width: 35.2%;
+    margin-bottom: 0;
+  }
+
+  @media ${device.desktop} {
+    justify-content: space-between;
+    width: 28.1%;
+    margin-bottom: 0;
+
+    & .feature-title {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 20px;
+
+      line-height: 22px;
+      color: var(--black);
+    }
   }
 `;

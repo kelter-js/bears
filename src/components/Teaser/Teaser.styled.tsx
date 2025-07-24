@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { device } from "../../helpers";
 
 export const Container = styled("section")`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,4 +19,31 @@ export const Container = styled("section")`
     text-align: center;
     color: var(--black);
   }
+
+  @media ${device.tablet} and ${device.maxTablet} {
+    height: 216px;
+
+    & .teaser {
+      margin: 0 auto;
+      line-height: 50px;
+      font-size: 42px;
+    }
+  }
+
+  @media ${device.desktop} {
+    height: 255px;
+
+    & .teaser {
+      line-height: 57px;
+      font-size: 52px;
+    }
+  }
+`;
+
+export const Pattern = styled.img`
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 `;
